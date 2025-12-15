@@ -16,7 +16,8 @@
     "MixinWorldRenderer",
     "MixinTitleScreen",
     "IMixin.ILivingEntity",
-    "MixinEntity"
+    "MixinEntity",
+    "MixinGameRenderer"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -7,6 +7,7 @@ import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.util.render.RenderUtil;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.phys.AABB;
 
 import java.awt.*;
@@ -23,6 +24,7 @@ public class ESP extends Module {
     @Subscribe
     public void onTick() {
         for (Entity entity : mc.level.entitiesForRendering()) {
+            if (mc.player.position().distanceTo(entity.position()) > 30) continue;
             if (entity == mc.player) continue;
             if (!isEntity(entity)) continue;
             pizdec.add(entity);
@@ -45,6 +47,7 @@ public class ESP extends Module {
     }
     private boolean isEntity(Entity entity) {
         if (entity.getType() == EntityType.ITEM) return true;
+        if (entity.getType().getCategory() == MobCategory.MONSTER) return true;
         return false;
     }
 }

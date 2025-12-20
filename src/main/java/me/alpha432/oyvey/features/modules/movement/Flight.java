@@ -21,7 +21,7 @@ public class Flight extends Module {
         } else {
             mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, -1, mc.player.getDeltaMovement().z);
         }
-        double speed[] = MathUtil.directionSpeed(1);
+        double speed[] = MathUtil.directionSpeed(3);
         mc.player.setDeltaMovement(speed[0], mc.player.getDeltaMovement().y, speed[1]);
     }
 }

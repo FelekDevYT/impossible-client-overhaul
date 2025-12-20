@@ -15,7 +15,7 @@ public class Scaffold extends Module {
 
         BlockPos pos = mc.player.blockPosition().below();
         Impossible.rotationManager.rotateToBlockPos(pos);
-        InteractionUtil.place(pos, true, InteractionHand.MAIN_HAND);
         mc.player.swing(InteractionHand.MAIN_HAND);
+        InteractionUtil.place(pos, true, InteractionHand.MAIN_HAND);
     }
 }

@@ -64,6 +64,8 @@ public class ModuleManager implements Jsonable, Util {
         register(new AutoFish());
         register(new ESP());
         register(new NoBob());
+        register(new ElytraFly());
+        register(new MultiTask());
     }
 
     public void register(Module module) {

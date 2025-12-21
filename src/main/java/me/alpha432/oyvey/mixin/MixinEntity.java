@@ -7,6 +7,7 @@ import me.alpha432.oyvey.features.gui.OyVeyGui;
 import me.alpha432.oyvey.features.modules.misc.AntiLiquid;
 import me.alpha432.oyvey.features.modules.player.HightJump;
 import me.alpha432.oyvey.features.modules.player.Velocity;
+import me.alpha432.oyvey.features.modules.render.NoRender;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,6 +32,13 @@ public class MixinEntity {
         AntiLiquid antiLiquid = Impossible.moduleManager.getModuleByClass(AntiLiquid.class);
         if (antiLiquid.isEnabled()) {
             ci.cancel();
+        }
+    }
+    @Inject(method = "isOnFire", at = @At("HEAD"), cancellable = true)
+    private void aVoid(CallbackInfoReturnable<Boolean> cir) {
+        NoRender noRender = Impossible.moduleManager.getModuleByClass(NoRender.class);
+        if (noRender.isEnabled()) {
+            cir.setReturnValue(false);
         }
     }
 }

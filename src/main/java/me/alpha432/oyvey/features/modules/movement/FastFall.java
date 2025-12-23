@@ -7,6 +7,7 @@ import me.alpha432.oyvey.features.modules.Module;
 
 
 public class FastFall extends Module {
+    // TODO: игрок прилип к земле
     private boolean returnTimers = true;
     public FastFall() {
         super("FastFall", "", Category.MOVEMENT);
@@ -17,11 +18,11 @@ public class FastFall extends Module {
         }
     }
     private boolean checkPos() {
-        if (!mc.player.isFallFlying()) return true;
-        if (!mc.player.isDeadOrDying()) return true;
-        if (!mc.player.isInLiquid()) return true;
-        if (!mc.player.isMovingSlowly()) return true;
-        return false;
+        if (mc.player.isFallFlying()) return false;
+        if (mc.player.isDeadOrDying()) return false;
+        if (mc.player.isInLiquid()) return false;
+        if (mc.player.isMovingSlowly()) return false;
+        return true;
     }
     private void isFall() {
         Impossible.TIMER = 5f;

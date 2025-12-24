@@ -33,4 +33,11 @@ public class MixinInGameHud {
             ci.cancel();
         }
     }
+    @Inject(method = "renderPortalOverlay", at = @At("HEAD"), cancellable = true)
+    private void aVoid(GuiGraphics guiGraphics, float f, CallbackInfo ci) {
+        NoRender noRender = Impossible.moduleManager.getModuleByClass(NoRender.class);
+        if (noRender.isEnabled()) {
+            ci.cancel();
+        }
+    }
 }

@@ -11,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 
 public class Impossible implements ModInitializer, ClientModInitializer {
     public static final String NAME = "Impossible Client v2 - 1.21.10 - 24/12/2025 19:22";
+
+
     public static float TIMER = 1f;
 
     public static final Logger LOGGER = LogManager.getLogger("");

@@ -24,8 +24,7 @@ public class MixinTitleScreen {
     // TODO: Если выйти в главное меню, звук вновь воспроизведется
     @Inject(method = "init", at = @At("HEAD"))
     private void aVoid(CallbackInfo ci) {
-        if (mc.screen instanceof TitleScreen) {
             mc.getSoundManager().play(SimpleSoundInstance.forMusic(SoundEvents.EXPERIENCE_ORB_PICKUP, 1f));
-        }
+
     }
 }

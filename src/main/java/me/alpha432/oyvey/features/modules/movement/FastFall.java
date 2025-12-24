@@ -3,7 +3,8 @@ package me.alpha432.oyvey.features.modules.movement;
 import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
-
+import net.fabricmc.fabric.mixin.item.client.HeldItemRendererMixin;
+import net.minecraft.client.renderer.ItemInHandRenderer;
 
 
 public class FastFall extends Module {
@@ -18,6 +19,8 @@ public class FastFall extends Module {
     }
     private boolean checkPos() {
         if (!mc.player.onGround()) return false;
+        if (mc.player.fallDistance > 3) return false;
+        if (mc.player.isFallFlying()) return false;
         if (mc.player.isDeadOrDying()) return false;
         if (mc.player.isInLiquid()) return false;
         if (mc.player.isMovingSlowly()) return false;
@@ -25,7 +28,7 @@ public class FastFall extends Module {
     }
     private void isFall() {
         if (checkPos()) {
-            Impossible.TIMER = 5f;
+            Impossible.TIMER = 100f;
             mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, -1, mc.player.getDeltaMovement().z);
             returnTimer();
         }

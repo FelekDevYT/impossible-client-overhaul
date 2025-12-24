@@ -18,10 +18,10 @@ public class Watermark extends HudModule {
         super.render(e);
 
         e.getContext().drawString(mc.font,
-                TextUtil.text("{global} %s {} %s", text.getValue()),
+                TextUtil.text(text.getValue(), ""),
                 (int) getX(), (int) getY(), -1);
 
-        String watermarkString = text.getValue() + "gfgfg";
+        String watermarkString = text.getValue() + "";
         setWidth(mc.font.width(watermarkString));
         setHeight(mc.font.lineHeight);
     }

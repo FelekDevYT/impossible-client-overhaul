@@ -57,7 +57,7 @@ public class ESP extends Module {
                case BOX -> RenderUtil.drawBox(event.getMatrix(), box, colorValue, lineWidth.getValue());
                case FILLED -> RenderUtil.drawBoxFilled(event.getMatrix(), box, colorValue);
                case BOTH -> {
-                   Color filledColor = new Color(colorValue.getRed(), colorValue.getGreen(), colorValue.getBlue(), 50);
+                   Color filledColor = new Color(colorValue.getRed(), colorValue.getGreen(), colorValue.getBlue(), 170);
                    RenderUtil.drawBoxFilled(event.getMatrix(), box, filledColor);
                    RenderUtil.drawBox(event.getMatrix(), box, colorValue, lineWidth.getValue());
                }

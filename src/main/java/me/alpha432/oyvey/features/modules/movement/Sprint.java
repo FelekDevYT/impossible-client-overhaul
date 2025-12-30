@@ -9,7 +9,7 @@ public class Sprint extends Module {
         super("Sprint", "", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
-        if (!PlayerUtil.isSprinting() || !PlayerUtil.isUsingItem() || !PlayerUtil.isSneaking() || PlayerUtil.isMoving()) {
+        if (!PlayerUtil.isSprinting() || !PlayerUtil.isUsingItem() || !PlayerUtil.isSneaking()) {
             PlayerUtil.setSprinting();
         }
     }

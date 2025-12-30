@@ -4,6 +4,7 @@ package me.alpha432.oyvey.features.modules.movement;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.util.MathUtil;
+import me.alpha432.oyvey.util.player.PlayerUtil;
 import net.minecraft.world.entity.vehicle.Boat;
 
 public class BoatFly extends Module {
@@ -11,7 +12,7 @@ public class BoatFly extends Module {
         super("BoatFly", "Fly using boats", Category.MOVEMENT);
     }
     @Subscribe public void onTick() {
-        if (mc.player.getVehicle() instanceof Boat) {
+        if (PlayerUtil.getVehicle() instanceof Boat) {
             if (mc.options.keyJump.isDown()) {
                 mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, 1, mc.player.getDeltaMovement().z);
             } else if (mc.options.keyShift.isDown()) {

@@ -4,6 +4,7 @@ import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.util.models.Timer;
+import me.alpha432.oyvey.util.player.PlayerUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Animal;

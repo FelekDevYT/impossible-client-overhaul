@@ -4,6 +4,7 @@ import me.alpha432.oyvey.Impossible;
 import me.alpha432.oyvey.features.commands.Command;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.server.players.PlayerList;
 
 import static me.alpha432.oyvey.util.traits.Util.mc;
 
@@ -22,5 +23,10 @@ public class ChatUtil {
         }
         // TODO add silent support ig
         mc.gui.getChat().addMessage(message);
+    }
+    public static void sendChatMessage(String message) {
+        if (mc.getConnection().getConnection() != null) {
+            mc.getConnection().sendChat(message);
+        }
     }
 }

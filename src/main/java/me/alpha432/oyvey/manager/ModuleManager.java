@@ -9,10 +9,7 @@ import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.features.modules.client.ClickGui;
 import me.alpha432.oyvey.features.modules.client.HudEditor;
 import me.alpha432.oyvey.features.modules.client.Notifications;
-import me.alpha432.oyvey.features.modules.combat.Aura;
-import me.alpha432.oyvey.features.modules.combat.Criticals;
-import me.alpha432.oyvey.features.modules.combat.HitSound;
-import me.alpha432.oyvey.features.modules.combat.OffHand;
+import me.alpha432.oyvey.features.modules.combat.*;
 import me.alpha432.oyvey.features.modules.hud.Coordinates;
 import me.alpha432.oyvey.features.modules.hud.Watermark;
 import me.alpha432.oyvey.features.modules.misc.*;
@@ -74,6 +71,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new Announcer());
         register(new OffHand());
         register(new HitSound());
+        register(new AutoPearl());
     }
 
     public void register(Module module) {

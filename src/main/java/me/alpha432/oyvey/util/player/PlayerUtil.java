@@ -1,6 +1,8 @@
 package me.alpha432.oyvey.util.player;
 
 import me.alpha432.oyvey.util.traits.Util;
+import net.minecraft.network.protocol.game.ServerboundUseItemPacket;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -45,5 +47,15 @@ public class PlayerUtil implements Util {
     }
     public static boolean getArmorSlot(EquipmentSlot slot, Item item) {
         return mc.player.getItemBySlot(slot).getItem().equals(item);
+    }
+    public static void interactEntity(Entity entity, InteractionHand hand) {
+        mc.gameMode.interact(mc.player, entity, hand);
+    }
+    public static void attackEntity(Entity entity) {
+        mc.gameMode.attack(mc.player, entity);
+    }
+    public static void useItem(InteractionHand hand, int id, float y, float x) {
+        mc.getConnection().send(new ServerboundUseItemPacket(hand, id, y, x));
+        mc.player.swing(InteractionHand.MAIN_HAND);
     }
 }

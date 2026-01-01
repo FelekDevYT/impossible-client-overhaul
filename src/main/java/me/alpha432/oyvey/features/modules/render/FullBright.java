@@ -2,10 +2,14 @@ package me.alpha432.oyvey.features.modules.render;
 
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
+import me.alpha432.oyvey.features.settings.Setting;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 
+import java.awt.*;
+
 public class FullBright extends Module {
+    public Setting<Color> color = color("Color", 255, 0, 0, 255);
     public FullBright() {
         super("FullBright", "", Category.RENDER);
     }

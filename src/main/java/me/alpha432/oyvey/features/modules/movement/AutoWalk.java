@@ -3,6 +3,7 @@ package me.alpha432.oyvey.features.modules.movement;
 import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
 
+
 public class AutoWalk extends Module {
     public AutoWalk() {
         super("AutoWalk", "", Category.MOVEMENT);

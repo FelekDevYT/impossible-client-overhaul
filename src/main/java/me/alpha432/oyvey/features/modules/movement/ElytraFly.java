@@ -5,6 +5,7 @@ import me.alpha432.oyvey.event.system.Subscribe;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.util.MathUtil;
 import me.alpha432.oyvey.util.player.PlayerUtil;
+import net.fabricmc.fabric.mixin.client.rendering.ClientWorldMixin;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Items;
 

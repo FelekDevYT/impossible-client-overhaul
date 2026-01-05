@@ -26,6 +26,7 @@ public class AutoSign extends Module {
 
     @Subscribe
     public void onScreen(ScreenEvent event) {
+        // TODO: пиздец код грязь
         Screen screen = event.getScreen();
         if (screen == null) return;
         if (!(screen instanceof AbstractSignEditScreen) || strings == null) return;

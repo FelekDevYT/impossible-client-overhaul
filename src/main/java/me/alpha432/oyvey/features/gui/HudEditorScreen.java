@@ -83,8 +83,6 @@ public class HudEditorScreen extends Screen {
     @Override // ignore 1.21.8 menu blur thing
     public void renderBackground(GuiGraphics context, int mouseX, int mouseY, float delta) {
     }
-
-
     public ArrayList<Widget> getComponents() {
         return components;
     }

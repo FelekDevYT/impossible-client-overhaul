@@ -13,7 +13,6 @@
     "MixinKeyboard",
     "MixinMouse",
     "MixinRenderTickCounter",
-    "MixinMinecraftClient",
     "MixinWorldRenderer",
     "MixinTitleScreen",
     "IMixin.ILivingEntity",
@@ -26,7 +25,9 @@
     "MixinLivingEntityRenderer",
     "MixinSweetBerryBushBlock",
     "MixinClientPlayerInteractionManager",
-    "MixinClientLevel"
+    "MixinClientLevel",
+    "MixinMinecraft",
+    "IMixin.IAbstractSignEditScreen"
   ],
   "injectors": {
     "defaultRequire": 1

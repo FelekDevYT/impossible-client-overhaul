@@ -27,7 +27,7 @@ public class ElytraFly extends Module {
                         } else if (mc.options.keyShift.isDown()) {
                             mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, -1, mc.player.getDeltaMovement().z);
                         } else {
-                            mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, 0, mc.player.getDeltaMovement().z);
+                            mc.player.setDeltaMovement(mc.player.getDeltaMovement().x, -0.00001, mc.player.getDeltaMovement().z);
                         }
                         double speed[] = MathUtil.directionSpeed(2);
                         mc.player.setDeltaMovement(speed[0], mc.player.getDeltaMovement().y, speed[1]);

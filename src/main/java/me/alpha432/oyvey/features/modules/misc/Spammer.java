@@ -24,7 +24,7 @@ public class Spammer extends Module {
     private String messageToSend = "";
 
     public Spammer() {
-        super("Spammer", "", Category.MISC);
+        super("Spammer", "Spamming messages in the chat.", Category.MISC);
     }
 
     @Override

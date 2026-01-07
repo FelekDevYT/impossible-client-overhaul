@@ -6,6 +6,7 @@ import me.nolikdevelopment.impossibleclient.util.player.PlayerUtil;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.EntityHitResult;

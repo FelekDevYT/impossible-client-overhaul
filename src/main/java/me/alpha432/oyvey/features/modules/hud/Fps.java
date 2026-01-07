@@ -6,7 +6,7 @@ import me.alpha432.oyvey.features.modules.client.HudModule;
 public class Fps extends HudModule {
 
     public Fps() {
-        super("Fps", "Display FPS", 20, 20);//FPS: AAA - заглушка для удобства
+        super("Fps", "Display FPS", 20, 20);
     }
 
     @Override

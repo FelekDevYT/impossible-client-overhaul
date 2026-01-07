@@ -76,6 +76,7 @@ public class ServerManager
     }
 
     public int getPing() {
+        // TODO: ПИНГ 0
         if (ServerManager.nullCheck()) {
             return 0;
         }

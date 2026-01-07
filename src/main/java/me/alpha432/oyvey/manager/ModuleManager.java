@@ -12,6 +12,7 @@ import me.alpha432.oyvey.features.modules.client.Notifications;
 import me.alpha432.oyvey.features.modules.combat.*;
 import me.alpha432.oyvey.features.modules.hud.Coordinates;
 import me.alpha432.oyvey.features.modules.hud.Fps;
+import me.alpha432.oyvey.features.modules.hud.Ping;
 import me.alpha432.oyvey.features.modules.hud.Watermark;
 import me.alpha432.oyvey.features.modules.misc.*;
 import me.alpha432.oyvey.features.modules.movement.*;
@@ -31,6 +32,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new Watermark());
         register(new Coordinates());
         register(new Fps());
+        register(new Ping());
         register(new HudEditor());
         register(new ClickGui());
         register(new Notifications());

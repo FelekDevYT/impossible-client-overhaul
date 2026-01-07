@@ -5,6 +5,7 @@ import me.alpha432.oyvey.features.commands.Command;
 import me.alpha432.oyvey.features.modules.Module;
 import me.alpha432.oyvey.features.settings.Setting;
 import me.alpha432.oyvey.util.StringUtils;
+import me.alpha432.oyvey.util.models.Timer;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -13,11 +14,11 @@ import java.nio.file.Paths;
 
 
 public class Spammer extends Module {
-    public Setting<Integer> delayPerTick = num("Delay", 20, 1, 500);
+    public Setting<Integer> delay = num("Delay", 20, 1, 500);
     public Setting<String> fileName = str("Filename", "spammer.txt");
     public Setting<Boolean> antiSpam = bool("AntiSpam", false);
 
-    private int timer = 0;
+    Timer timer = new Timer();
     private String messageToSend = "";
 
     public Spammer() {
@@ -26,13 +27,13 @@ public class Spammer extends Module {
 
     @Override
     public void onEnable() {
-        timer = 0;
+        timer.reset();
         prepareMessage();
     }
 
     @Override
     public void onDisable() {
-        timer = 0;
+        timer.reset();
         messageToSend = "";
     }
 
@@ -41,19 +42,14 @@ public class Spammer extends Module {
         if (messageToSend == null || messageToSend.isEmpty()) {
             return;
         }
-
-        timer++;
-
-        if (timer >= delayPerTick.getValue()) {
-            timer = 0;
+        if (timer.passedS(delay.getValue())) {
             String msg = messageToSend;
 
             if (antiSpam.getValue()) {
                 msg += " | " + StringUtils.generateRandomString(4);
             }
-
-
             mc.getConnection().sendChat(msg.toString());
+            timer.reset();
         }
     }
 

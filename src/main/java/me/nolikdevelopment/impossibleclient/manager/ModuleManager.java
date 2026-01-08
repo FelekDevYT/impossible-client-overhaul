@@ -54,6 +54,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new Sprint());
         register(new FOV());
         register(new HighJump());
+        register(new ViewClip());
         register(new NoJumpDelay());
         register(new NoSlow());
         register(new LevitationControl());

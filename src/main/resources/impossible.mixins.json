@@ -9,6 +9,7 @@
     "MixinClientPlayNetworkHandler",
     "MixinInGameHud",
     "MixinKeyboard",
+    "MixinCamera",
     "MixinMouse",
     "MixinRenderTickCounter",
     "MixinWorldRenderer",

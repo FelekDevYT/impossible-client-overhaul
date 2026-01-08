@@ -17,6 +17,7 @@ import me.nolikdevelopment.impossibleclient.features.modules.hud.Watermark;
 import me.nolikdevelopment.impossibleclient.features.modules.misc.*;
 import me.nolikdevelopment.impossibleclient.features.modules.movement.*;
 import me.nolikdevelopment.impossibleclient.features.modules.player.*;
+import me.nolikdevelopment.impossibleclient.features.modules.player.Timer;
 import me.nolikdevelopment.impossibleclient.features.modules.render.*;
 import me.nolikdevelopment.impossibleclient.util.traits.Jsonable;
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
@@ -79,6 +80,7 @@ public class ModuleManager implements Jsonable, Util {
         register(new Spammer());
         register(new AutoSign());
         register(new TestModule());
+        register(new Timer());
     }
 
     public void register(Module module) {

@@ -15,7 +15,7 @@ public class MixinCamera implements Util {
     private void aVoid(float f, CallbackInfoReturnable<Float> cir) {
         ViewClip viewClip = Impossible.moduleManager.getModuleByClass(ViewClip.class);
         if (viewClip.isEnabled()) {
-            cir.setReturnValue(5f);
+            cir.setReturnValue(3f);
         }
     }
 }

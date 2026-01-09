@@ -10,4 +10,7 @@ public class InventoryUtil implements Util {
         int id = mc.player.containerMenu.containerId;
         mc.gameMode.handleInventoryMouseClick(id, slot, button, type, mc.player);
     }
+    public static void swap(int slot) {
+        mc.player.getInventory().setSelectedSlot(slot);
+    }
 }

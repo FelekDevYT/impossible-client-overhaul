@@ -51,12 +51,10 @@ public class ModuleManager implements Jsonable, Util {
         register(new BoatFly());
         register(new NoRender());
         register(new Sprint());
-        register(new FastUse());
         register(new FOV());
         register(new HighJump());
         register(new ViewClip());
         register(new AutoTool());
-        register(new TriggetBot());
         register(new NoJumpDelay());
         register(new NoSlow());
         register(new LevitationControl());
@@ -85,7 +83,6 @@ public class ModuleManager implements Jsonable, Util {
         register(new Spammer());
         register(new AutoSign());
         register(new TestModule());
-        register(new Timer());
     }
 
     public void register(Module module) {

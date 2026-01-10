@@ -15,7 +15,7 @@ public class AutoBowRelease extends Module {
     }
     @Subscribe public void onTick() {
         if (mc.player.getTicksUsingItem() >= 5) {
-            if (PlayerUtil.getWeaponOffhand().getItem() == Items.BOW || PlayerUtil.isUsingItem()) {
+            if (PlayerUtil.getWeaponOffhand().getItem() == Items.BOW) {
                mc.getConnection().send(new ServerboundPlayerActionPacket(ServerboundPlayerActionPacket.Action.RELEASE_USE_ITEM, BlockPos.ZERO, mc.player.getMotionDirection()));
                mc.getConnection().send(new ServerboundUseItemPacket(PlayerUtil.getWeaponOffhand().getItem() == Items.BOW ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND, 0, mc.player.getXRot(), mc.player.getYRot()));
                mc.player.stopUsingItem();

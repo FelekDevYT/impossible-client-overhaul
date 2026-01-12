@@ -61,4 +61,7 @@ public class PlayerUtil implements Util {
     public static boolean isMoving() {
         return mc.player.zza != 0 || mc.player.xxa != 0;
     }
+    public static Entity isVehicle() {
+        return mc.player.getVehicle();
+    }
 }

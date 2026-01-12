@@ -4,6 +4,7 @@ import me.nolikdevelopment.impossibleclient.Impossible;
 import me.nolikdevelopment.impossibleclient.event.system.Subscribe;
 import me.nolikdevelopment.impossibleclient.features.modules.Module;
 import me.nolikdevelopment.impossibleclient.util.models.Timer;
+import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Animal;
@@ -36,6 +37,7 @@ public class Aura extends Module {
     private void isAttack(Entity entity) {
         if (timer.passedS(0.87)) {
             mc.gameMode.attack(mc.player, entity);
+            mc.player.swing(InteractionHand.MAIN_HAND);
             Impossible.rotationManager.rotateToEntity(entity);
             timer.reset();
         }

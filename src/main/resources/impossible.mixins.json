@@ -28,7 +28,8 @@
     "MixinMinecraft",
     "IMixin.IAbstractSignEditScreen",
     "MixinWindow",
-    "MixinFogRenderer"
+    "MixinFogRenderer",
+    "MixinLightTexture"
   ],
   "injectors": {
     "defaultRequire": 1

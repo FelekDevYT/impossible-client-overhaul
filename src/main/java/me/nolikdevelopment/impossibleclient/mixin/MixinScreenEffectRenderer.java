@@ -16,7 +16,7 @@ public class MixinScreenEffectRenderer {
     @Inject(method = "renderFire", at = @At("HEAD"), cancellable = true)
     private static void aVoid(PoseStack poseStack, MultiBufferSource multiBufferSource, TextureAtlasSprite textureAtlasSprite, CallbackInfo ci) {
         NoRender noRender = Impossible.moduleManager.getModuleByClass(NoRender.class);
-        if (noRender.isEnabled()) {
+        if (noRender.isEnabled() && noRender.fireOverlay.getValue()) {
             ci.cancel();
         }
     }

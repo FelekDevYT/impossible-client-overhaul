@@ -38,7 +38,7 @@ public class MixinEntity {
     @Inject(method = "isOnFire", at = @At("HEAD"), cancellable = true)
     private void aVoid1(CallbackInfoReturnable<Boolean> cir) {
         NoRender noRender = Impossible.moduleManager.getModuleByClass(NoRender.class);
-        if (noRender.isEnabled()) {
+        if (noRender.isEnabled() && noRender.fireOverlay.getValue()) {
             cir.setReturnValue(false);
         }
     }

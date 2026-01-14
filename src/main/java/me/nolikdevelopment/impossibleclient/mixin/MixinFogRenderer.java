@@ -18,7 +18,7 @@ public abstract class MixinFogRenderer {
     @ModifyExpressionValue(method = "getBuffer", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/MappableRingBuffer;currentBuffer()Lcom/mojang/blaze3d/buffers/GpuBuffer;"))
     private GpuBuffer aVoid(GpuBuffer original) {
         NoRender noRender = Impossible.moduleManager.getModuleByClass(NoRender.class);
-        if (noRender.isEnabled()) {
+        if (noRender.isEnabled() && noRender.noFog.getValue()) {
             return getBuffer(FogRenderer.FogMode.NONE).buffer();
         }
         return original;

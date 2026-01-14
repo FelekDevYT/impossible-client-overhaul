@@ -25,7 +25,7 @@ public class AntiAFK extends Module implements Util {
     }
 
     @Override
-    public void disable() {
+    public void onDisable() {
         timer.reset();
     }
 

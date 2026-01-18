@@ -1,7 +1,9 @@
 package me.nolikdevelopment.impossibleclient.util.player;
 
 import me.nolikdevelopment.impossibleclient.util.traits.Util;
+import net.minecraft.client.model.PlayerCapeModel;
 import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.level.block.WebBlock;
 
 
 // TODO: добавить разных методов
@@ -11,6 +13,11 @@ public class InventoryUtil implements Util {
         mc.gameMode.handleInventoryMouseClick(id, slot, button, type, mc.player);
     }
     public static void swap(int slot) {
+        if (slot < 0 || slot > 8) return;
         mc.player.getInventory().setSelectedSlot(slot);
+        mc.gameMode.ensureHasSentCarriedItem();
+    }
+    public static int getSlot() {
+        return mc.player.getInventory().getSelectedSlot();
     }
 }

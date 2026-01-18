@@ -27,14 +27,14 @@ public class MixinInGameHud {
     @Inject(method = "renderEffects", at = @At("HEAD"), cancellable = true)
     private void aVoid(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         NoRender noRender = Impossible.moduleManager.getModuleByClass(NoRender.class);
-        if (noRender.isEnabled()) {
+        if (noRender.isEnabled() && noRender.potionEffects.getValue()) {
             ci.cancel();
         }
     }
     @Inject(method = "renderPortalOverlay", at = @At("HEAD"), cancellable = true)
     private void aVoid(GuiGraphics guiGraphics, float f, CallbackInfo ci) {
         NoRender noRender = Impossible.moduleManager.getModuleByClass(NoRender.class);
-        if (noRender.isEnabled()) {
+        if (noRender.isEnabled() && noRender.portalOverlay.getValue()) {
             ci.cancel();
         }
     }
